@@ -1,15 +1,17 @@
+import { Observable } from '../../../node_modules/rxjs';
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'bs-navbar',
   templateUrl: './bs-navbar.component.html',
   styleUrls: ['./bs-navbar.component.css']
 })
-export class BsNavbarComponent implements OnInit {
+export class BsNavbarComponent {
 
-  constructor() { }
-
-  ngOnInit() {
+  constructor(public auth:AuthService) { }
+  logout() {
+    this.auth.logout();
   }
 
 }
